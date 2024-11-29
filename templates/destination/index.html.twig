@@ -1,0 +1,36 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Destination - {{ destination.name }}{% endblock %}
+
+{% block content %}
+<section class="destination-header">
+    <h1>Découvrez {{ destination.name }}</h1>
+    <p>Une expérience inoubliable vous attend dans cette destination de rêve.</p>
+</section>
+
+<section class="destination-info">
+    <h2>À propos de {{ destination.name }}</h2>
+    <p>{{ destination.description }}</p>
+</section>
+
+<section class="destination-activities">
+    <h2>Activités principales</h2>
+    <ul>
+        {% for activity in destination.activities %}
+            <li>{{ activity }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="destination-gallery">
+    <h2>Galerie d'images</h2>
+    <div class="gallery">
+        {% for image in destination.images %}
+            <div class="gallery-item">
+                <img src="{{ asset('assets/images/' ~ image) }}" alt="{{ destination.name }} Image">
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

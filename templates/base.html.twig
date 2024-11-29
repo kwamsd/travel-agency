@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <title>{% block title %}Travel Agency{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Travel Agency</h1>
+        <nav>
+            <a href="/">Accueil</a>
+            <a href="/destination">Destination</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Travel Agency</p>
+    </footer>
+</body>
+</html>
